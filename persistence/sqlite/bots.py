@@ -1,0 +1,10 @@
+import sqlite3
+print("Bots")
+print("ID")
+ID = int(input())
+print("Name")
+name = input()
+print("maximum speed")
+max_speed = int(input())
+print("maximum strength")
+max_strength = int(input())
