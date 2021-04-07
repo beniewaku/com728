@@ -18,3 +18,7 @@ print(f"""
      |   |
      |   |
 """)
+
+
+def run():
+    return None

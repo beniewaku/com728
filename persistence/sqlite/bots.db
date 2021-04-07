@@ -1,7 +1,0 @@
-CREATE TABLE "bots" (
-	"ID"	INTEGER,
-	"NAME"	TEXT NOT NULL,
-	"Max speed"	INTEGER,
-	"Max strength"	INTEGER,
-	"date"	TEXT
-);

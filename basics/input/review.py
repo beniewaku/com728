@@ -14,3 +14,7 @@ print()
 journey=input()
 
 print("thank you")
+
+
+def run():
+    return None

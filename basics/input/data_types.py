@@ -14,3 +14,7 @@ print("calculating bmi")
 bmi = weight / (height ** 2)
 
 print(f"your bmi is {bmi: .2}")
+
+
+def run():
+    return None
