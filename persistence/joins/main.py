@@ -6,14 +6,12 @@
 
 import database
 
-
 def menu():
     print("Select one of the following options:")
     print("[1] Display stock levels")
 
     selected_option = int(input("Your selection choice: "))
     return selected_option
-
 
 def run():
     selected_option = menu()

@@ -7,8 +7,6 @@
 
 import sqlite3
 
-import records
-
 PRODUCT_COLUMN = 0
 DESCRIPTION_COLUMN = 1
 QUANTITY_COLUMN = 2
@@ -26,15 +24,14 @@ def display_products_with_stock_levels():
 
     record = cursor.fetchall()
 
-    print(f"There are {len(records)} products in the catalogue")
+    print(f"There are {len(record)}products in the catalogue")
     print(f"The stock level are as follows:")
 
-    for record in records:
-        print(f"Product: {PRODUCT_COLUMN[0]}")
-        print(f"Description: {DESCRIPTION_COLUMN[1]}")
-        print(f"Stock level: {QUANTITY_COLUMN[2]}")
+    for record in record:
+        print(f"Product: {record[PRODUCT_COLUMN]}")
+        print(f"Description: {record[DESCRIPTION_COLUMN]}")
+        print(f"Stock level: {record[QUANTITY_COLUMN]}")
         print()
 
 
     db.close()
-

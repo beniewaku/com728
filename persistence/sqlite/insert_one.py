@@ -31,7 +31,7 @@ def insert_bot_in_db(data):
     sql = "INSERT INTO bots \
     (name, max_speed, max_strength, creation_date, manufacturer_id)" \
     "VALUES" \
-     f"('{data [0]}', {data [1]}, {data [2]}, '{data [3]}', {data [4]})"
+     f"('{data [0]}', {data [1]}, {data [2]}, '{data [3]}, {data [4]})"
 
     cursor.execute(sql)
 
