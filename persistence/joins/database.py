@@ -102,3 +102,22 @@ def display_products_missing_suppliers():
 
     db.close()
 
+# Modify your module database so that it contains an additional function named display_suppliers_missing_products.
+# This function should take no parameters and should display each product with its supplier. You should use a right
+# outer join to query the database.
+
+def display_suppliers_missing_products():
+    db = sqlite3.connect("catalogue.db")
+    cursor = db.cursor()
+    sql = "SELECT supplier.name, product.name  " \
+          "FROM supplier " \
+          "LEFT OUTER JOIN product ON product.supplier_id = supplier.id;"
+    cursor.execute(sql)
+
+    records = cursor.fetchall()
+
+    for record in records:
+        print(f"Supplier: {record[0]}, Product: {record[1]}")
+        print()
+
+    db.close()

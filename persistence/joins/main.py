@@ -7,6 +7,7 @@ def menu():
     print("[2] Display suppliers")
     print("[3] Display supplier locations")
     print("[4] Display missing suppliers")
+    print("[5] Display missing products")
 
 
     selected_option = int(input("Your selection choice: "))
@@ -22,6 +23,8 @@ def run():
         database.display_product_supplier_locations()
     elif selected_option == 4:
         database.display_products_missing_suppliers()
+    elif selected_option == 5:
+        database.display_suppliers_missing_products()
     else:
         print("Invalid selection... try again")
         run()
