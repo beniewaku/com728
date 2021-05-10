@@ -145,14 +145,15 @@ def list_years (data):
         years.add(year)
     tui.display_years(years)
     tui.completed()
-# - The function should iterate through each record in the list and extract the year.
-# - The function should add the extracted year to a local set so that we have a set of distinct years
-# when the function finishes iterating through the list.
-# - The appropriate functions from the module tui should be called to indicate the start of the operation, display the set of years and indicate the end of the operation.
+# - The function should iterate through each record in the list and extract the year. - The function should add the
+# extracted year to a local set so that we have a set of distinct years when the function finishes iterating through
+# the list. - The appropriate functions from the module tui should be called to indicate the start of the operation,
+# display the set of years and indicate the end of the operation.
 
 
-# tally_medals(data): This function takes a list named data as a parameter and tallies up the number of gold, silver and bronze medals.
-# - The function should create a dictionary that initially contains a count of zero for each medal i.e. {"Gold": 0, "Silver": 0, "Bronze": 0}.
+# tally_medals(data): This function takes a list named data as a parameter and tallies up the number of gold,
+# silver and bronze medals. - The function should create a dictionary that initially contains a count of zero for
+# each medal i.e. {"Gold": 0, "Silver": 0, "Bronze": 0}.
 
 def tally_medals(data):
     tui.started("Tallying medals")
@@ -163,8 +164,9 @@ def tally_medals(data):
         medal = record[col_medal]
         if medal in ("Gold", "Silver", "Bronze"):
             medals_tally[medal] += 1
-    # The dictionary should contain the total count of each medal once the code has finished iterating through the list data.
-    # The appropriate functions from the module tui should be called to indicate the start of the operation, display the tally of medals and indicate the end of the operation.
+    # The dictionary should contain the total count of each medal once the code has finished iterating through the
+    # list data. The appropriate functions from the module tui should be called to indicate the start of the
+    # operation, display the tally of medals and indicate the end of the operation.
     tui.display_medal_tally(medals_tally)
     tui.completed()
 
@@ -190,13 +192,13 @@ def tally_team_medals(data):
 
     tui.display_team_medal_tally(medal_tally)
     tui.completed()
-# and a dictionary with the medals and their counts (the value) e.g. {"United Kingdom": {"Gold":10, "Silver":8, "Bronze":6}}
-# - The function should initially create an empty dictionary.
-# - The function should then iterate through each record in the list data and extract the name of the team and the medal.
-# - The function should check if the team is already in dictionary.
-# - If the team is already in the dictionary then
-#         the function should retrieve the nested medals dictionary for that team and increment the appropriate count.
-# - If the team is not already in the dictionary then
-#         the function should add the team to the dictionary with the nested dictionary: {"Gold": 0, "Silver": 0, "Bronze": 0} as the value and increment the appropriate count.
-# - The appropriate functions from the module tui should be called to indicate the start of the operation, display the tally of medals and indicate the end of the operation.
+# and a dictionary with the medals and their counts (the value) e.g. {"United Kingdom": {"Gold":10, "Silver":8,
+# "Bronze":6}} - The function should initially create an empty dictionary. - The function should then iterate through
+# each record in the list data and extract the name of the team and the medal. - The function should check if the
+# team is already in dictionary. - If the team is already in the dictionary then the function should retrieve the
+# nested medals dictionary for that team and increment the appropriate count. - If the team is not already in the
+# dictionary then the function should add the team to the dictionary with the nested dictionary: {"Gold": 0,
+# "Silver": 0, "Bronze": 0} as the value and increment the appropriate count. - The appropriate functions from the
+# module tui should be called to indicate the start of the operation, display the tally of medals and indicate the
+# end of the operation.
 

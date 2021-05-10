@@ -37,18 +37,34 @@ def display_events():
 
 
 def display_presenters_for_event(event_id):
-    db = sqlite3.connect("events.db")
+    db = sqlite3.connect('events.db')
     cursor = db.cursor()
+    sql = """
+        SELECT e.name
+        FROM events e
+        WHERE e.id = ?;
+        """
+    values = [event_id]
+    cursor.execute(sql, values)
+    record = cursor.fetchone()
 
-    sql = "SELECT presenter.first_name, presenter.last_name, event.name" \
-          "FROM events " \
-          "INNER JOIN event_presenters ep ON ep.presenter_id = presenter.id" \
-          f"WHERE e.id = {event_id}"
-    cursor.execute(sql)
+    print(f"The event name is: {record[0]}")
+
+    sql = """
+        SELECT presenter.name, o.name
+        FROM presenters p 
+        INNER JOIN event_presenters ep ON ep.presenter_id = p.id 
+        INNER JOIN events e ON ep.event_id = e.id 
+        INNER JOIN organisations o ON p.organisation_id = o.id
+        WHERE e.id = ?;
+        """
+    cursor.execute(sql, values)
     records = cursor.fetchall()
 
+    print("The presenters for this event are as follows:")
     for record in records:
-        print(record)
+        print(f"{record[0]} ({record[1]})")
+
 
 def display_events_for_presenter(presenter_id):
     db = sqlite3.connect('events.db')
